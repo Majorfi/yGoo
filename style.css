@@ -1,0 +1,128 @@
+/* This will load Tailwindcss + all the overwrite from Yearn lib */
+@import '@yearn-finance/web-lib/style.next.css';
+
+:root.gooo {
+	--color-primary: 135 51% 42%;
+
+	--color-neutral-0: 326 95% 60%;
+	--color-neutral-900: 0 0% 100%;
+	--color-neutral-800: 0 0% 96%;
+	--color-neutral-700: 0 80% 96%;
+	--color-neutral-600: 0 70% 96%;
+	--color-neutral-500: 0 50% 96%;
+	--color-neutral-400: 0 40% 96%;
+	--color-neutral-300: 0 30% 96%;
+	--color-neutral-200: 0 20% 96%;
+	--color-neutral-100: 0 10% 96%;
+	--color-neutral-900: 0 100% 100%;
+}
+
+:root {
+	& .yveCRV--nav-link {
+		@apply relative cursor-pointer transition-colors text-neutral-500 hover:text-neutral-900 font-normal;
+		
+		&.active {
+			@apply text-neutral-900 font-bold;
+		}
+	}
+	& .yveCRV--dropdown-menu {
+		--dropdown-bg-color: hsl(var(--color-neutral-300));
+		--dropdown-bg-color-active: hsl(var(--color-neutral-600));
+		--dropdown-border-width: 0px;
+		--dropdown-border-color: transparent;
+
+		@apply flex overflow-y-auto absolute left-0 flex-col mt-1 w-full min-w-fit max-h-60 scrollbar-none text-neutral-400 border border-neutral-300 bg-neutral-200;
+	}
+	& .yveCRV--dropdown-menu-item {
+		@apply w-full flex flex-row items-center cursor-pointer py-2 pr-4 pl-3 transition-colors;
+		&[data-active="true"] {
+			@apply bg-neutral-100;
+		}
+	}
+	& .mobile-nav-item {
+		@apply flex flex-col items-start justify-between rounded bg-good-ol-grey-100;
+		& > p {
+			@apply p-2 text-base font-bold text-neutral-900;
+		}
+	}
+	& .yearn--button-smaller {
+		@apply h-8 text-xs py-2 w-22 px-2;
+	}
+	& .yearn--modal-bigger.yearn--modal {
+		@apply max-w-2xl;
+	}
+}
+
+
+
+.wordWrapper {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+}
+.word {
+	@apply absolute text-neutral-900 font-bold text-5xl md:text-8xl uppercase text-center flex justify-center items-center w-[300px] md:w-[600px];
+	opacity: 0;
+}
+.wordLeft {
+	@apply absolute text-left flex justify-start items-center;
+	opacity: 0;
+}
+.letter {
+	display: inline-block;
+	position: relative;
+	float: left;
+	transform: translateZ(25px);
+	transform-origin: 50% 50% 25px;
+}
+.letter.out {
+	transform: rotateX(90deg);
+	transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.letter.behind {
+	transform: rotateX(-90deg);
+}
+.letter.in {
+	transform: rotateX(0deg);
+	transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+.loader {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 16px 0 #fff, -16px 0 #fff;
+  position: relative;
+  animation: flash 1s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: #FFF2;
+    box-shadow: 12px 0 #FFF2, -12px 0 #FFF;
+  }
+  50% {
+    background-color: #FFF;
+    box-shadow: 12px 0 #FFF2, -12px 0 #FFF2;
+  }
+  100% {
+    background-color: #FFF2;
+    box-shadow: 12px 0 #FFF, -12px 0 #FFF2;
+  }
+}
+
+
+
+.yearn--button {
+	&[data-variant="outlined"] {
+		@apply text-neutral-900 bg-pink-400 border border-pink-400 font-bold;
+		&:disabled {@apply opacity-40;}
+		&:not(:disabled):not([aria-busy="true"]):hover {@apply bg-neutral-900 text-neutral-0;}
+	}
+}

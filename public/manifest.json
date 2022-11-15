@@ -1,0 +1,35 @@
+{
+	"name": "yBribe",
+	"short_name": "yBribe",
+	"description": "Sell your vote to the highest bidder, or offer a bribe to increase CRV emissions to your favorite Curve pool.\nJust like democracy, but you don't need to wear a suit.",
+	"iconPath": "./favicons/favicon.svg",
+	"locale": "en-US",
+	"uri": "https://ybribe.yearn.farm/",
+	"og": "https://ybribe.yearn.farm/og.png",
+	"twitter": "@iearnfinance",
+	"github": "https://github.com/yearn/ybribe",
+	"icons": [
+		{
+			"src": "./favicons/android-icon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "./favicons/android-icon-144x144.png",
+			"sizes": "144x144",
+			"type": "image/png"
+		},
+		{
+			"src": "./favicons/android-icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"theme_color": "#000000",
+	"background_color": "#000000",
+	"title_color": "#ffffff",
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait"
+}
